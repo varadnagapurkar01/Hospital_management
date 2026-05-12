@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - VKVV Hospital</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/images/vkvv-logo.png" alt="VKVV">
+            <div class="brand-name">VKVV <span>Hospital</span></div>
+        </div>
+
+        <div class="role-badge">
+            <div class="avatar" style="background: linear-gradient(135deg, #00b4d8, #0077b6);">D</div>
+            <div class="role-info">
+                <h5 id="userName">Dr. User</h5>
+                <p>Doctor</p>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a class="active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+            <li><a><i class="fas fa-calendar-check"></i> My Appointments</a></li>
+            <li><a><i class="fas fa-user-injured"></i> My Patients</a></li>
+            <li><a><i class="fas fa-file-medical"></i> Prescriptions</a></li>
+            <li><a><i class="fas fa-clipboard-list"></i> Medical Records</a></li>
+            <li><a><i class="fas fa-comments"></i> Messages</a></li>
+            <li><a><i class="fas fa-user-cog"></i> Profile</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+        
+        <div class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+                <h1>Good Day, Doctor! 🩺</h1>
+                <p id="currentDate">Loading...</p>
+            </div>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search patient...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon"><i class="fas fa-calendar-day"></i></div>
+                    <span class="trend">Today</span>
+                </div>
+                <h3 id="todayAppointments">0</h3>
+                <p>Today's Appointments</p>
+            </div>
+            <div class="stat-card green">
+                <div class="stat-header">
+                    <div class="stat-icon"><i class="fas fa-user-injured"></i></div>
+                    <span class="trend">Total</span>
+                </div>
+                <h3 id="totalPatients">0</h3>
+                <p>My Patients</p>
+            </div>
+            <div class="stat-card orange">
+                <div class="stat-header">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <span class="trend">Pending</span>
+                </div>
+                <h3 id="pendingApt">0</h3>
+                <p>Pending Reviews</p>
+            </div>
+            <div class="stat-card pink">
+                <div class="stat-header">
+                    <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <span class="trend">Done</span>
+                </div>
+                <h3 id="completedApt">0</h3>
+                <p>Completed Today</p>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-header">
+                    <h2>📋 Today's Schedule</h2>
+                    <a href="#" class="view-all">View All →</a>
+                </div>
+                <div class="card-body">
+                    <div id="scheduleList"></div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="card-header">
+                    <h2>🔔 Notifications</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="activity-list" id="activityList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patients Table -->
+        <div class="content-card">
+            <div class="card-header">
+                <h2>👥 Recent Patients</h2>
+                <button class="btn-action"><i class="fas fa-plus"></i> Add Patient</button>
+            </div>
+            <div class="card-body" style="padding: 0;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Patient</th>
+                            <th>Age</th>
+                            <th>Condition</th>
+                            <th>Last Visit</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientsTable"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="js/doctor.js"></script>
+</body>
+</html>

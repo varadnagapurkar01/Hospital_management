@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VKVV Hospital - Advanced Healthcare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets\images\vkvv-logo.png" alt="VKVV Hospital Logo">
+                <span class="logo-text">VKVV <span class="highlight">Hospital</span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-tag"><i class="fas fa-heartbeat"></i> Trusted Healthcare Partner</span>
+                <h1>Your Health, <span class="gradient-text">Our Priority</span></h1>
+                <p class="hero-description">
+                    Welcome to <strong>VKVV Hospital</strong> — where advanced technology meets compassionate care. 
+                    Experience next-generation healthcare management built for patients, doctors, and administrators.
+                </p>
+                <div class="hero-buttons">
+                    <a href="login.html" class="btn btn-primary">
+                        <i class="fas fa-user-md"></i> Book Appointment
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-play-circle"></i> Explore Services
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3 class="counter" data-target="500">0</h3>
+                        <p>Expert Doctors</p>
+                    </div>
+                    <div class="stat">
+                        <h3 class="counter" data-target="15000">0</h3>
+                        <p>Happy Patients</p>
+                    </div>
+                    <div class="stat">
+                        <h3 class="counter" data-target="25">0</h3>
+                        <p>Departments</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <i class="fas fa-heartbeat"></i>
+                    <div>
+                        <h4>Heart Rate</h4>
+                        <p>72 BPM</p>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-user-md"></i>
+                    <div>
+                        <h4>24/7 Support</h4>
+                        <p>Always Available</p>
+                    </div>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-shield-virus"></i>
+                    <div>
+                        <h4>100% Secure</h4>
+                        <p>Patient Data Safe</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Healthcare">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-tag">Our Services</span>
+            <h2>Comprehensive <span class="gradient-text">Healthcare Solutions</span></h2>
+            <p>One platform for all your hospital management needs</p>
+        </div>
+        <div class="services-grid" id="servicesGrid">
+            <!-- Services will be loaded dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- ===== USER ROLES SECTION ===== -->
+    <section class="roles" id="about">
+        <div class="section-header">
+            <span class="section-tag">Built For Everyone</span>
+            <h2>Choose Your <span class="gradient-text">Portal</span></h2>
+            <p>Different dashboards for different needs</p>
+        </div>
+        <div class="roles-container">
+            <div class="role-card admin-card">
+                <div class="role-icon"><i class="fas fa-user-shield"></i></div>
+                <h3>Admin Portal</h3>
+                <p>Complete control over hospital operations, staff, and analytics</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Manage Doctors & Patients</li>
+                    <li><i class="fas fa-check"></i> View Analytics Dashboard</li>
+                    <li><i class="fas fa-check"></i> Billing & Reports</li>
+                </ul>
+                <a href="login.html?role=admin" class="role-btn">Login as Admin <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="role-card doctor-card">
+                <div class="role-icon"><i class="fas fa-user-md"></i></div>
+                <h3>Doctor Portal</h3>
+                <p>Manage patients, appointments, and medical records efficiently</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> View Appointments</li>
+                    <li><i class="fas fa-check"></i> Patient History</li>
+                    <li><i class="fas fa-check"></i> Prescription Management</li>
+                </ul>
+                <a href="login.html?role=doctor" class="role-btn">Login as Doctor <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="role-card patient-card">
+                <div class="role-icon"><i class="fas fa-user-injured"></i></div>
+                <h3>Patient Portal</h3>
+                <p>Book appointments, view records, and manage your health journey</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Book Appointments</li>
+                    <li><i class="fas fa-check"></i> View Medical Records</li>
+                    <li><i class="fas fa-check"></i> Online Consultations</li>
+                </ul>
+                <a href="login.html?role=patient" class="role-btn">Login as Patient <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DOCTORS SECTION ===== -->
+    <section class="doctors" id="doctors">
+        <div class="section-header">
+            <span class="section-tag">Meet Our Team</span>
+            <h2>Expert <span class="gradient-text">Doctors</span></h2>
+            <p>Skilled professionals dedicated to your wellness</p>
+        </div>
+        <div class="doctors-grid" id="doctorsGrid">
+            <!-- Doctors will be loaded dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- ===== CONTACT / CTA SECTION ===== -->
+    <section class="cta" id="contact">
+        <div class="cta-container">
+            <h2>Ready to Experience <span class="gradient-text">Modern Healthcare?</span></h2>
+            <p>Join thousands of patients who trust VKVV Hospital for their healthcare needs</p>
+            <a href="login.html" class="btn btn-primary btn-large">
+                <i class="fas fa-stethoscope"></i> Get Started Now
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="assets\images\vkvv-logo.png" alt="VKVV Logo">
+                    <span class="logo-text">VKVV <span class="highlight">Hospital</span></span>
+                </div>
+                <p>Advanced Hospital Management System powered by AWS Cloud Technology</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Emergency Care</a></li>
+                    <li><a href="#">Online Consultation</a></li>
+                    <li><a href="#">Lab Tests</a></li>
+                    <li><a href="#">Pharmacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> care@vkvvhospital.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 <strong>VKVV IT World</strong> | All Rights Reserved | Powered by AWS Cloud ☁️</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

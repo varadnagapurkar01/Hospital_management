@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - VKVV Hospital</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/images/vkvv-logo.png" alt="VKVV">
+            <div class="brand-name">VKVV <span>Hospital</span></div>
+        </div>
+
+        <div class="role-badge">
+            <div class="avatar">A</div>
+            <div class="role-info">
+                <h5 id="userName">Admin User</h5>
+                <p>Administrator</p>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a class="active" data-section="dashboard"><i class="fas fa-th-large"></i> Dashboard</a></li>
+            <li><a data-section="doctors"><i class="fas fa-user-md"></i> Doctors</a></li>
+            <li><a data-section="patients"><i class="fas fa-user-injured"></i> Patients</a></li>
+            <li><a data-section="appointments"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+            <li><a data-section="departments"><i class="fas fa-hospital"></i> Departments</a></li>
+            <li><a data-section="billing"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+            <li><a data-section="reports"><i class="fas fa-chart-line"></i> Reports</a></li>
+            <li><a data-section="settings"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+        
+        <!-- Top Bar -->
+        <div class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+                <h1>Welcome Back, Admin! 👋</h1>
+                <p id="currentDate">Loading...</p>
+            </div>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search anything...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                    <span class="trend">↑ 12%</span>
+                </div>
+                <h3 id="totalDoctors">0</h3>
+                <p>Total Doctors</p>
+            </div>
+            <div class="stat-card green">
+                <div class="stat-header">
+                    <div class="stat-icon"><i class="fas fa-user-injured"></i></div>
+                    <span class="trend">↑ 8%</span>
+                </div>
+                <h3 id="totalPatients">0</h3>
+                <p>Total Patients</p>
+            </div>
+            <div class="stat-card orange">
+                <div class="stat-header">
+                    <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                    <span class="trend">↑ 23%</span>
+                </div>
+                <h3 id="totalAppointments">0</h3>
+                <p>Appointments Today</p>
+            </div>
+            <div class="stat-card pink">
+                <div class="stat-header">
+                    <div class="stat-icon"><i class="fas fa-rupee-sign"></i></div>
+                    <span class="trend">↑ 15%</span>
+                </div>
+                <h3 id="totalRevenue">0</h3>
+                <p>Revenue (₹)</p>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Recent Appointments -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h2>📅 Recent Appointments</h2>
+                    <a href="#" class="view-all">View All →</a>
+                </div>
+                <div class="card-body" style="padding: 0;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentsTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h2>🔔 Recent Activity</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="activity-list" id="activityList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Doctors Table -->
+        <div class="content-card">
+            <div class="card-header">
+                <h2>👨‍⚕️ Top Doctors</h2>
+                <button class="btn-action"><i class="fas fa-plus"></i> Add Doctor</button>
+            </div>
+            <div class="card-body" style="padding: 0;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Specialty</th>
+                            <th>Patients</th>
+                            <th>Experience</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="doctorsTable"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
